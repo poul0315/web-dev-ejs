@@ -1,0 +1,146 @@
+/* removing default margin and padding in HTML */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* navbar container */
+.container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.navbar {
+    width: 1110px;
+    border-radius: 10px;
+}
+
+/* Navbar hover effect */
+.navbar .navbar-nav .nav-link:hover {
+    color: black;
+}
+
+.navbar .navbar-nav .nav-item {
+    position: relative;
+}
+
+.navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* margin: auto; */
+    background-color: black;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.6s;
+}
+
+.navbar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+}
+
+/* footer */
+.footer-container {
+    max-width: 1170px;
+    /* background-color: red; */
+    margin: auto;
+}
+
+.row {
+    display: flex !important;
+    flex-wrap: wrap; 
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 70px;
+}
+
+.footer-col {
+    width: 50% !important;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-chil) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin-right: 0 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.5s ease; /* to give hover effect */
+}
+
+.footer-col .social-links a:hover {
+    color: #24252b;
+    background-color: white
+}
+
+/* responsive */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50% !important;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,60 @@
+.grid-control, html {
+    height: 100%;
+    width: 100%;
+}
+
+.grid-control {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 1.5rem;
+    grid-template-areas:
+    '. .'
+    'i p'
+    'f f';
+}
+
+/* Need to separate image config from grid area */
+.image { 
+    margin: 100px 0 0 150px;
+    width: 400px;
+    height: auto;
+    /* object-fit: cover; */
+}
+
+.profile-pic {
+    grid-area: i;
+}
+
+
+.about-me {
+    grid-area: p;
+    padding: 100px 100px 0 0;
+    margin-right: 50px;
+}
+
+.footer {
+    grid-area: f;
+}
+
+@media(max-width: 767px) {
+    .grid-control {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, auto;
+        grid-template-areas:
+        'i'
+        'p'
+        'f';
+    }
+    .about-me {
+        padding: 0; /* You can write "!important" to keep them alive from overwriting */
+        margin: 0 50px;
+    }
+
+    .profile-pic {
+        width: 300px;
+        padding: 0;
+        margin: 100px 50px 0;
+    }
+}
+
